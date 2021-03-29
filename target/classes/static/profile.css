@@ -1,0 +1,26 @@
+
+.profile-img {
+    width: 250px;
+    height: 250px;
+}
+.username {
+    font-size: 150%;
+    color: #5682a3;
+}
+.section {
+    padding-bottom: 0px;
+}
+.profile-info {
+    float: left;
+    clear: both;
+}
+.caption {
+    font-size: 20px;
+    color: #5682a3;
+}
+.edit {
+    color: #5682a3;
+}
+.edit:hover {
+    text-decoration: none;
+}
