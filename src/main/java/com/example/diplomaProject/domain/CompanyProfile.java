@@ -1,9 +1,8 @@
 package com.example.diplomaProject.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class CompanyProfile {
@@ -15,6 +14,16 @@ public class CompanyProfile {
     private String activity;
     private String info;
     private String city;
+    @OneToMany(mappedBy = "companyProfile", cascade = CascadeType.PERSIST)
+    private List<Vacancy> vacancyList = new ArrayList<>();
+
+    public List<Vacancy> getVacancyList() {
+        return vacancyList;
+    }
+
+    public void setVacancyList(List<Vacancy> vacancyList) {
+        this.vacancyList = vacancyList;
+    }
 
     public Long getId() {
         return id;

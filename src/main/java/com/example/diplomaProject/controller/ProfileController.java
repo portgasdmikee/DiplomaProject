@@ -30,7 +30,7 @@ public class ProfileController {
         boolean isProfile = user.getTarget().equals("lookingJob");
         model.addAttribute("user", user);
 
-        return isProfile ? "profile" : "companyProfile";
+        return isProfile ? "redirect:/profile" : "redirect:/companyProfile";
     }
 
     @GetMapping("/editProfile")

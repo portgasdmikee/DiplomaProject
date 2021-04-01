@@ -55,20 +55,25 @@
                             <p class="info">${user.companyProfile.activity?ifExists}</p>
                             <p class="caption">Информация о компании</p>
                             <p class="">${user.companyProfile.info?ifExists}</p>
-                            <h2 class="caption">Вакансии компании</h2>
 
+                            <h2 class="caption">Вакансии компании </h2>
+                            <#list user.companyProfile.vacancyList as vacancy>
                             <div class="vacancy-info border">
-                                <h3 class="vacancy-name"><a href="aboutVacancy.html" class="">Java разработчик</a></h3>
-                                <h6 class="company-name"><a href="aboutCompany.html">TOO SlickRick</a></h6>
-                                <p class="city-name">Караганда</p>
+                                <h3 class="vacancy-name"><a href="aboutVacancy.html" class="">${vacancy.name}</a></h3>
+                                <h6 class="company-name"><a href="aboutCompany.html">${user.companyProfile.name}</a></h6>
+                                <p class="city-name">${user.companyProfile.city}</p>
+
+                                <form action="/deleteVacancy" method="post">
+                                    <button type="submit" >УДАЛИТЬ</button>
+                                    <input type="hidden" name="vacancy" value="${vacancy.id}">
+                                    <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                                </form>
                             </div>
 
-                            <div class="vacancy-info border">
-                                <h3 class="vacancy-name"><a href="#" class="">PYTHON developers team developerы 5kif4a
-                                        and rinafolk</a></h3>
-                                <h6 class="company-name"><a href="#">TOO SlickRick</a></h6>
-                                <p class="city-name">Караганда</p>
-                            </div>
+
+                            <#else>
+                                Вакансий нет
+                            </#list>
                         </div>
                     </div>
                 </div>
