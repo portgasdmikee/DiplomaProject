@@ -15,16 +15,14 @@
                 <div class="col-6">
                     <div class="row justify-content-center">
                         <div class="profile-name">
-                            <p class="username">${user.profile.surname?ifExists} ${user.profile.name?ifExists}</p>
+                            <p class="username">${employee.name} ${employee.surname} </p>
                         </div>
                     </div>
                     <hr>
                 </div>
                 <div class="col-2">
                     <div class="row justify-content-center">
-                        <div class="button1">
-                            <button type="button" class="btn btn-outline-primary"><a href="/editProfile" class="edit">Изменить профиль</a></button>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -44,13 +42,13 @@
                     <div class="row">
                         <div class="profile-info">
                             <p class="caption">Дата рождения</p>
-                            <p class="info">${user.profile.birthday?ifExists}</p>
+                            <p class="info">${employee.birthday}</p>
                             <p class="caption">Профессиональные навыки</p>
-                            <p class="">${user.profile.skills?ifExists}</p>
+                            <p class="">${employee.skills}</p>
                             <p class="caption">Образование</p>
-                            <p class="info">${user.profile.education?ifExists}</p>
+                            <p class="info">${employee.education}</p>
                             <p class="caption">Опыт работы</p>
-                            <p class="info">${user.profile.experience?ifExists}</p>
+                            <p class="info">${employee.experience}</p>
                         </div>
                     </div>
                 </div>

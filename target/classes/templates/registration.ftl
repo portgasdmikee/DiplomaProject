@@ -1,5 +1,6 @@
 <#import "parts/common.ftl" as c>
 <#import "parts/login.ftl" as l>
+<link rel="stylesheet" type="text/css" href="/static/registration.css">
 
 <@c.page>
     <h1 class="intro1">Регистрация</h1>

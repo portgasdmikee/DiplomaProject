@@ -1,4 +1,5 @@
 <#import "parts/common.ftl" as c>
+<link rel="stylesheet" type="text/css" href="/static/profile.css">
 
 <@c.page>
     <section class="section">
@@ -20,6 +21,7 @@
                     <hr>
                 </div>
                 <div class="col-2">
+                    <#if myPage>
                     <div class="row justify-content-center">
                         <div class="button1">
                             <button type="button" class="btn btn-outline-primary"><a href="/editCompanyProfile"
@@ -32,6 +34,7 @@
                             </button>
                         </div>
                     </div>
+                    </#if>
                 </div>
             </div>
         </div>
@@ -62,12 +65,13 @@
                                 <h3 class="vacancy-name"><a href="aboutVacancy.html" class="">${vacancy.name}</a></h3>
                                 <h6 class="company-name"><a href="aboutCompany.html">${user.companyProfile.name}</a></h6>
                                 <p class="city-name">${user.companyProfile.city}</p>
-
+                                <#if myPage>
                                 <form action="/deleteVacancy" method="post">
                                     <button type="submit" >УДАЛИТЬ</button>
                                     <input type="hidden" name="vacancy" value="${vacancy.id}">
                                     <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                                 </form>
+                                </#if>
                             </div>
 
 

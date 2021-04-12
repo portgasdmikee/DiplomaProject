@@ -30,6 +30,13 @@ public class User implements UserDetails {
 
     private String target;
 
+    public boolean isTarget(){
+        if (target.equals("lookingJob")){
+            return true;
+        }
+        return false;
+    }
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "profile_id")
     private Profile profile;

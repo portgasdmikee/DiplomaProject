@@ -1,0 +1,25 @@
+.coWorker-info {
+    background-color: #5682a3;
+    padding: 30px;
+    margin-bottom: 10px;
+    width: 600px;
+}
+.coWorker-info a {
+    color: white;
+}
+.coWorker-info a:hover {
+    text-decoration: none;
+}
+.coWorker-name {
+    color: white;
+}
+.company-name {
+    padding-top: 10px;
+}
+.city-name {
+    color: white;
+}
+.caption {
+    font-size: 20px;
+    color: #5682a3;
+}

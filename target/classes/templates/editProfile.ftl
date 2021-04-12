@@ -52,11 +52,7 @@
                             </div>
 
 
-                            <div class="mb-3">
-                                <button type="submit" class="btn btn-primary"><a href="editPassword.html"
-                                                                                 class="edit">Изменить пароль</a>
-                                </button>
-                            </div>
+
                             <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                             <input type="hidden" name="profileId" value="${user.profile.id?ifExists}"/>
                             <div class="mb-3">

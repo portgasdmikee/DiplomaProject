@@ -1,13 +1,15 @@
 <#import "parts/common.ftl" as c>
+<link rel="stylesheet" type="text/css" href="/static/vacancy.css">
 
 <@c.page>
     <section class="section">
         <div class="container">
             <div class="row">
                 <div class="col-6">
-                    <form class="d-flex">
-                        <input class="form-control mr-2" type="search" placeholder="Поиск вакансии" aria-label="Search">
+                    <form class="d-flex" action="/vacancySearch" method="get">
+                        <input class="form-control mr-2" name="keyword" value="${keyword}"  type="text" placeholder="Поиск вакансии" aria-label="Search">
                         <button class="btn btn-primary" type="submit">Поиск вакансий</button>
+
                     </form>
                 </div>
             </div>
@@ -27,17 +29,24 @@
                     <div class="row">
                         <div class="vacancy-list">
 
-                            <div class="vacancy-info border">
-                                <h3 class="vacancy-name"><a href="aboutVacancy.html" class="">Java разработчик</a></h3>
-                                <h6 class="company-name"><a href="aboutCompany.html" >TOO SlickRick</a></h6>
-                                <p class="city-name">Караганда</p>
-                            </div>
+                                <#list vacancyList as vacancy>
+                                <div class="vacancy-info border">
+                                    <h3 class="vacancy-name"><a href="/aboutVacancy/${vacancy.id}" class="">${vacancy.name}</a></h3>
+                                    <h6 class="company-name"><a href="/aboutCompany/${vacancy.companyProfile.id}">${vacancy.companyProfile.name}</a></h6>
+                                    <p class="city-name">${vacancy.companyProfile.city}</p>
 
-                            <div class="vacancy-info border">
-                                <h3 class="vacancy-name"><a href="#" class="">PYTHON developers team developerы 5kif4a and rinafolk</a></h3>
-                                <h6 class="company-name"><a href="#" >TOO SlickRick</a></h6>
-                                <p class="city-name">Караганда</p>
-                            </div>
+
+                                </div>
+
+
+
+                                <#else>
+                                    Вакансий нет
+                                </#list>
+
+
+
+
 
                         </div>
                     </div>

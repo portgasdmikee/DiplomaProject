@@ -1,4 +1,5 @@
 <#import "parts/common.ftl" as c>
+<link rel="stylesheet" type="text/css" href="/static/profile.css">
 
 <@c.page>
     <section class="section">

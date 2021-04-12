@@ -12,7 +12,7 @@ public class Vacancy {
     private String duty;
     private String conditions;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne( cascade = CascadeType.ALL)
     @JoinColumn(name = "company_profile_id")
     private CompanyProfile companyProfile;
 
