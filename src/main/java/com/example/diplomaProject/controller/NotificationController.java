@@ -42,8 +42,18 @@ public class NotificationController {
         Profile profile = user.getProfile();
 
         notificationService.addNotification(vacancy, profile);
-        model.addAttribute("message", "Вы откликнулись");
+        model.addAttribute("message", "Вы откликнулись, проверяйте вашу электронную почту!");
         model.addAttribute("vacancy", vacancy);
+
+        CompanyProfile currentCompany = user.getCompanyProfile();
+        boolean myPage = false;
+        if (currentCompany != null){
+            if (currentCompany.getId().equals(vacancy.getCompanyProfile().getId())){
+                myPage = true;
+            }
+        }
+
+        model.addAttribute("myPage", myPage);
 
 
 

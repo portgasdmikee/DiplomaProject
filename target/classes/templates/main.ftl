@@ -20,7 +20,7 @@
         <div class="row align-items-end">
             <div class="col-8">
                 <div class="img-intro">
-
+                    <img src="resources/static/img/work1.png">
                 </div>
             </div>
             <div class="col-4">

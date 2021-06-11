@@ -33,7 +33,7 @@
             <div class="col-4">
                 <div class="row justify-content-center">
                     <div class="button">
-                        <#if myPage>
+                        <#if !myPage>
                         <form action="/addNotification" method="post">
                         <button type="submit" class="btn btn-outline-primary btn-lg">Откликнуться</button>
                             <input type="hidden" name="vacancyId"  value="${vacancy.id}"/>

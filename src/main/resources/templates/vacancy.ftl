@@ -34,8 +34,6 @@
                                     <h3 class="vacancy-name"><a href="/aboutVacancy/${vacancy.id}" class="">${vacancy.name}</a></h3>
                                     <h6 class="company-name"><a href="/aboutCompany/${vacancy.companyProfile.id}">${vacancy.companyProfile.name}</a></h6>
                                     <p class="city-name">${vacancy.companyProfile.city}</p>
-
-
                                 </div>
 
 
@@ -43,10 +41,6 @@
                                 <#else>
                                     Вакансий нет
                                 </#list>
-
-
-
-
 
                         </div>
                     </div>

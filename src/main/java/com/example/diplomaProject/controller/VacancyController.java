@@ -1,5 +1,6 @@
 package com.example.diplomaProject.controller;
 
+import com.example.diplomaProject.domain.CompanyProfile;
 import com.example.diplomaProject.domain.User;
 import com.example.diplomaProject.domain.Vacancy;
 import com.example.diplomaProject.repository.UserRepo;
@@ -74,10 +75,19 @@ public class VacancyController {
     }
 
     @GetMapping("/aboutVacancy/{id}")
-    public String aboutVacancy(Model model, @PathVariable("id") Vacancy id) {
+    public String aboutVacancy(Model model, @PathVariable("id") Vacancy id, Principal principal) {
         model.addAttribute("vacancy", id);
         model.addAttribute("message", "");
-        model.addAttribute("myPage", false);
+        User user = userRepo.findByUsername(principal.getName());
+        CompanyProfile currentCompany = user.getCompanyProfile();
+        boolean myPage = false;
+        if (currentCompany != null){
+            if (currentCompany.getId().equals(id.getCompanyProfile().getId())){
+                myPage = true;
+            }
+        }
+
+        model.addAttribute("myPage", myPage);
 
 
         return "aboutVacancy";

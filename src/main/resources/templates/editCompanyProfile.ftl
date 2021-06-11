@@ -17,22 +17,22 @@
 
                             <div class="mb-3">
                                 <label class="form-label">Название компании</label>
-                                <input type="text" name="name" value="${user.companyProfile.name?ifExists} class="form-control">
+                                <input type="text" name="name" value="${user.companyProfile.name?ifExists}" class="form-control">
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label">Город</label>
-                                <input type="text" name="city" value="${user.companyProfile.city?ifExists} class="form-control">
+                                <input type="text" name="city" value="${user.companyProfile.city?ifExists}" class="form-control">
                             </div>
 
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Сферы деятельности</span>
-                                <textarea name="activity" class="form-control" value="${user.companyProfile.activity?ifExists} aria-label="With textarea"></textarea>
+                                <textarea name="activity" class="form-control" value="${user.companyProfile.activity?ifExists}" aria-label="With textarea"></textarea>
                             </div>
 
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Информация о компании</span>
-                                <textarea name="info" class="form-control" value="${user.companyProfile.info?ifExists} aria-label="With textarea"></textarea>
+                                <textarea name="info" class="form-control" value="${user.companyProfile.info?ifExists}" aria-label="With textarea"></textarea>
                             </div>
 
 
